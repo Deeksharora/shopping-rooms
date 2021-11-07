@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_rooms/chat/chat%20room.dart';
 import 'package:shopping_rooms/rooms/room%20wishlist.dart';
 import 'package:shopping_rooms/rooms/roomhome.dart';
 
@@ -22,11 +23,13 @@ class _RoomnavigationState extends State<Roomnavigation> {
   Widget build(BuildContext context) {
   final screens =[
    Roomhome(roomid: roomid),
+   GroupChatRoom(roomid: roomid),
    Roomwishlist(roomid: roomid)
 
   ];
       return Scaffold(
        bottomNavigationBar: BottomNavigationBar(
+         
         currentIndex: index,
         iconSize: 30,
         selectedItemColor: Colors.white,
@@ -40,22 +43,22 @@ class _RoomnavigationState extends State<Roomnavigation> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Color(0xff2FC4B2)
+            backgroundColor: Colors.pinkAccent
           ),
            BottomNavigationBarItem(
             icon: Icon(Icons.chat),
             label: 'Chat',
-            backgroundColor: Color(0xff2FC4B2)
+            backgroundColor: Colors.pinkAccent
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Wishlist',
-            backgroundColor: Color(0xff2FC4B2)
+            backgroundColor: Colors.pinkAccent
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
-            backgroundColor: Color(0xff2FC4B2)
+            backgroundColor: Colors.pinkAccent
           ),
 
           

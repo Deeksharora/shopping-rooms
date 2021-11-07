@@ -83,12 +83,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Wishlist',
-            backgroundColor: Color(0xff2FC4B2)
+            backgroundColor: Colors.pinkAccent
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
-            backgroundColor: Color(0xff2FC4B2)
+            backgroundColor: Colors.pinkAccent
           ),
 
           
