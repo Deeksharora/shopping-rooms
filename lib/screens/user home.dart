@@ -49,6 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.pinkAccent,
+          actions: [
+            IconButton(onPressed: () {
+                                      signOut();
+                                    }, icon: Icon(Icons.logout,color: Colors.white))
+          ],
         ),
         body: Center(
           child: Container(

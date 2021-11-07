@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shopping_rooms/rooms/update.dart';
+import 'package:shopping_rooms/screens/user%20home.dart';
 class Roomhome extends StatefulWidget {
   //const Roomhome({ Key? key }) : super(key: key);
 final String roomid;
@@ -20,6 +21,14 @@ class _RoomhomeState extends State<Roomhome> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.pinkAccent,
+          actions: [
+            IconButton(onPressed: (){
+              Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomeScreen()),
+                          );
+            }, icon: Icon(Icons.logout))
+          ],
         ),
         body: Center(
           child: Container(

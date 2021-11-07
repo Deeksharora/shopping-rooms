@@ -118,10 +118,10 @@ login() async {
                   width: screenSize.width * 0.80,
                   height: screenSize.height * 0.20,
                   child: Text(
-                    'CRUX FLUTTER SUMMER GROUP',
+                    'MYNTRA HACKERRAMP',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Color(0xff2FC4B2),
+                      color: Colors.pinkAccent,
                       fontWeight: FontWeight.w800,
                       fontSize: 35,
                     ),
@@ -202,7 +202,7 @@ login() async {
                     width: screenSize.width * 0.75,
                     height: screenSize.height * 0.08,
                     child: Card(
-                      color: Color(0xff2FC4B2),
+                      color: Colors.pinkAccent,
                       child: TextButton(
                         onPressed: login,
                         child: Text(
@@ -220,7 +220,7 @@ login() async {
                       onPressed: login,
                       child: Text('Forgot Password ?'),
                       style:
-                          TextButton.styleFrom(primary: Color(0xff2FC4B2)),
+                          TextButton.styleFrom(primary: Colors.pinkAccent),
                     ),
                   ),
                 ],
@@ -252,7 +252,7 @@ login() async {
                     },
                     child: Text('Register',
                         style: TextStyle(
-                          color: Color(0xff2FC4B2),
+                          color: Colors.pinkAccent,
                           fontSize: 15,
                         )),
                   ),
