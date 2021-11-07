@@ -100,9 +100,9 @@ String? id='';
                 alignment: Alignment.center,
                 width: 350,
                 height: 60,
-                color: Color(0xff2FC4B2),
+                color: Colors.pinkAccent,
                 child: Text(
-                  'CRUX FLUTTER SUMMER GROUP',
+                  'MYNTRA HACKERRAMP',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.white,
@@ -142,32 +142,6 @@ String? id='';
                       ],
                     ),
                     
-                    Column(
-                      children: [
-                        Padding(padding: EdgeInsets.all(12)),
-                        Container(
-                         height: screenSize.height * 0.04,
-                         alignment: Alignment.centerLeft,
-                          child: Text(
-                            'ID Number',
-                            
-                          ),
-                        ),
-                        TextFormField(
-                           validator: (input)
-                        {
-                          if(input!.isEmpty)
-                          return 'Enter valid ID Number';
-                        },
-                        onSaved: (input) => _id = input!,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              fillColor: Colors.grey[300],
-                            filled: true,
-                              hintText: 'Please enter your BITS ID Number'),
-                               ),
-                      ],
-                    ),
                     Column(
                       children: [
                         Padding(padding: EdgeInsets.all(12)),
@@ -222,51 +196,7 @@ String? id='';
                         ),
                       ],
                     ),
-                    Column(
-                      children: [
-                        Padding(padding: EdgeInsets.all(12)),
-                        Container(
-                          height: screenSize.height*0.04,
-                         alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Batch',
-                            
-                          ),
-                        ),
-                        Container(
-                          width: screenSize.width * 0.85,
-                          height: screenSize.height*0.06,
-                          color: Colors.grey[300],
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Center(
-                              child: DropdownButton<String>(
-                                isExpanded: true,
-                                value: dropdownValue,
-                                onChanged: (String? newValue) {
-                                  setState(() {
-                                    dropdownValue = newValue!;
-                                  });
-                                },
-                                underline: DropdownButtonHideUnderline(
-                                    child: Container()),
-                                items: <String>[
-                                  '2020',
-                                  '2019',
-                                  '2018',
-                                  '2017'
-                                ].map<DropdownMenuItem<String>>((String value) {
-                                  return DropdownMenuItem<String>(
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    
                   ],
                 ),
               ),
@@ -289,7 +219,7 @@ String? id='';
                           });
                         },
                         activeTrackColor: Colors.grey,
-                        activeColor: Color(0xff2FC4B2),
+                        activeColor: Colors.pinkAccent,
                       )
                     ],
                   ),
@@ -353,7 +283,7 @@ String? id='';
                  height: screenSize.height * 0.06,
                 
                 decoration: BoxDecoration(
-                    color: Color(0xff2FC4B2),
+                    color: Colors.pinkAccent,
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                     style: TextButton.styleFrom(
@@ -382,7 +312,7 @@ String? id='';
                       child: Text(
                         'Login',
                         style: TextStyle(
-                          color: Color(0xff2FC4B2),
+                          color: Colors.pinkAccent,
                           
                         ),
                       )),
