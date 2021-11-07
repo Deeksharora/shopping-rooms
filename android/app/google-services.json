@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "579673676105",
+    "project_id": "shopping-rooms",
+    "storage_bucket": "shopping-rooms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579673676105:android:9446d8e76d625601b16298",
+        "android_client_info": {
+          "package_name": "com.example.shopping_rooms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579673676105-nbbrajgo2epn1jmqlb12sahrh4uivi1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shopping_rooms",
+            "certificate_hash": "347aa37c90cdd4362451821b1fa83fcd561734ff"
+          }
+        },
+        {
+          "client_id": "579673676105-qbkon06qk86qq3uc7635cmo5qkevngop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAazSzAFFxlQgjpQBJUqAX-MBEcDUdmauE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579673676105-qbkon06qk86qq3uc7635cmo5qkevngop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
