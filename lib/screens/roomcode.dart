@@ -30,17 +30,27 @@ late List <String> members;
         child: Container(
           
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Enter room code"),
-              TextFormField(decoration: InputDecoration(
-                                                           border: InputBorder.none,
-                                  fillColor: Colors.grey[300],
-                                  filled: true,
-                                  hintText: 'Please enter room code'),
-                                  controller: codecontroller,
-                                  
-                                  ),
-              //SizedBox(height:20),
+              
+              Text("Enter room code",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w500) ,),
+              SizedBox(height: 15,),
+              Center(
+                child: Container(
+                  width: 350,
+                  child: TextFormField(decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(10),
+                                                               border: InputBorder.none,
+                                      fillColor: Colors.grey[300],
+                                      filled: true,
+                                      hintText: 'Please enter room code'),
+                                      
+                                      controller: codecontroller,
+                                      
+                                      ),
+                ),
+              ),
+              SizedBox(height:20),
               
                   TextButton(onPressed: () {
                     Update(uid: codecontroller.text).enterroom(_auth.currentUser!.uid);
@@ -48,7 +58,7 @@ late List <String> members;
                                context,
                                MaterialPageRoute(builder: (context) => Roomnavigation(roomid : codecontroller.text)),
                               );
-                            },child: Text("Go!"))
+                            },child: Text("Go!",style: TextStyle(color: Colors.pinkAccent,fontSize: 25),))
                 
             ],
           

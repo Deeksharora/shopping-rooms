@@ -44,8 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+     var screenSize = MediaQuery.of(context).size;
     var docid;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.pinkAccent,
@@ -60,31 +62,50 @@ class _HomeScreenState extends State<HomeScreen> {
             
              child: Column(
                children: [
-                    SizedBox(height: 40,),
+                    SizedBox(height: 160,),
               Flexible(
                 child: Container(
-                  
-                  child: TextButton(onPressed: () {
-                          DocumentReference docref = FirebaseFirestore.instance.collection('rooms').doc();
-                          docref.set({'members': mem,'product': mem});
-                          docid = docref.id;
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Createroom(uid:docid)),
-                          );
-                        },
-                         child: Text("Create Room") ),
+                  width: screenSize.width * 0.75,
+                    height: screenSize.height * 0.08,
+                  child: Card(
+                    color: Colors.pinkAccent,
+                    child: TextButton(onPressed: () {
+                            DocumentReference docref = FirebaseFirestore.instance.collection('rooms').doc();
+                            docref.set({'members': mem,'product': mem});
+                            docid = docref.id;
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Createroom(uid:docid)),
+                            );
+                          },
+                           child: Text("Create Room",style: TextStyle(
+                        color: Colors.white,
+                       
+                        fontSize: 20,
+                      ),),),
+                  ),
                 ),
               ),
+              SizedBox(height: 15,),
+              Text('OR',style: TextStyle(color: Colors.pink,fontSize: 20)),
+              SizedBox(height: 15,),
               Flexible(
                 child: Container(
-                  
-                  child: TextButton(onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Roomcode()),
-                          );
-                        }, child: Text("Enter a Room") ),
+                  width: screenSize.width * 0.75,
+                    height: screenSize.height * 0.08,
+                  child: Card(
+                    color: Colors.pinkAccent,
+                    child: TextButton(onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Roomcode()),
+                            );
+                          }, child: Text("Enter a Room",style: TextStyle(
+                        color: Colors.white,
+                        
+                        fontSize: 20,
+                      ),) ),
+                  ),
                 ),
               ),
                     Container(child: SizedBox(height: 20,),color: Colors.black,),

@@ -4,17 +4,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_rooms/users/user database.dart';
 
-class Roomwishlist extends StatefulWidget {
-  //const Roomwishlist({ Key? key }) : super(key: key);
-final String roomid;
-Roomwishlist({required this.roomid});
+class Userwishlist extends StatefulWidget {
+  const Userwishlist({ Key? key }) : super(key: key);
+
   @override
-  _RoomwishlistState createState() => _RoomwishlistState(roomid:roomid);
+  _UserwishlistState createState() => _UserwishlistState();
 }
 
-class _RoomwishlistState extends State<Roomwishlist> {
-   final String roomid;
-  _RoomwishlistState({required this.roomid});
+class _UserwishlistState extends State<Userwishlist> {
+  
     FirebaseAuth _auth = FirebaseAuth.instance;
   final CollectionReference products = FirebaseFirestore.instance.collection('products');
   @override
@@ -23,7 +21,7 @@ class _RoomwishlistState extends State<Roomwishlist> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(appBar: AppBar(backgroundColor: Colors.pinkAccent,),
       body: StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('rooms').doc(roomid).snapshots(),
+        stream: FirebaseFirestore.instance.collection('users').doc(_auth.currentUser!.uid).snapshots(),
        // initialData: initialData,
         builder: (BuildContext context, AsyncSnapshot snapshot1) {
           
@@ -31,7 +29,7 @@ class _RoomwishlistState extends State<Roomwishlist> {
           {
             
           }
-          List wishlist = snapshot1.data['product'];
+          List wishlist = snapshot1.data['wishlist'];
            return FutureBuilder<QuerySnapshot>(
                 future: products.get(),
                 builder: (context,snapshot){

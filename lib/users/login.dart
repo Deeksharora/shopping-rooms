@@ -118,7 +118,7 @@ login() async {
                   width: screenSize.width * 0.80,
                   height: screenSize.height * 0.20,
                   child: Text(
-                    'MYNTRA HACKERRAMP',
+                    'Myntra Hackerramp',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.pinkAccent,

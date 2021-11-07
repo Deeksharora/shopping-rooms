@@ -6,7 +6,7 @@ class Database{
 final String uid;
 Database({required this.uid});
 final CollectionReference data = FirebaseFirestore.instance.collection('users');
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  //FirebaseAuth _auth = FirebaseAuth.instance;
 
 Future updateuserdata(String name,List<String>wishlist,List<String>cart)
 async {
@@ -18,11 +18,13 @@ async {
    
 } 
 
-   updatecount(int cnt)async{
-     Map<String,dynamic> demoData = {
-       'count': cnt,
+addproduct(String productid)
+{
+   Map<String,dynamic> demoData = {
+       'wishlist': FieldValue.arrayUnion([productid]),
      };
-     data.doc(_auth.currentUser!.uid).update(demoData);
-   }
-
+     
+     data.doc(uid).update(demoData);
+}
+  
 }

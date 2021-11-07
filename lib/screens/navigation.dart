@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shopping_rooms/screens/user%20wishlist.dart';
 import 'package:shopping_rooms/users/login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shopping_rooms/screens/user home.dart';
@@ -16,6 +17,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   int index =0;
   final screens =[
    HomeScreen(),
+   Userwishlist(),
 
   ];
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -76,15 +78,15 @@ class _NavigationScreenState extends State<NavigationScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
-            backgroundColor: Color(0xff2FC4B2)
+            backgroundColor: Colors.pinkAccent
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border_outlined),
+            icon: Icon(Icons.favorite),
             label: 'Wishlist',
             backgroundColor: Color(0xff2FC4B2)
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shop),
+            icon: Icon(Icons.shopping_cart),
             label: 'Cart',
             backgroundColor: Color(0xff2FC4B2)
           ),

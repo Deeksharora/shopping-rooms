@@ -18,6 +18,7 @@ class _RoomhomeState extends State<Roomhome> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.pinkAccent,
@@ -27,7 +28,7 @@ class _RoomhomeState extends State<Roomhome> {
                             context,
                             MaterialPageRoute(builder: (context) => HomeScreen()),
                           );
-            }, icon: Icon(Icons.logout))
+            }, icon: Icon(Icons.logout,color: Colors.white,))
           ],
         ),
         body: Center(
@@ -58,9 +59,16 @@ class _RoomhomeState extends State<Roomhome> {
                             Stack(
                               children: [
                                 Image.network((document.data() as dynamic)!['images'][0]),
-                                IconButton(onPressed: (){
-                                  Update(uid: roomid).addproduct(document.id);
-                                }, icon: Icon(Icons.favorite))]),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    IconButton(onPressed: (){
+                                      Update(uid: roomid).addproduct(document.id);
+                                    }, icon: Icon(Icons.favorite,color: Colors.white,)),
+                                    IconButton(onPressed: (){}, icon: Icon(Icons.share,color: Colors.white,)),
+                                  ],
+                                )
+                                ]),
                                 
                                 Text((document.data()as dynamic)!['Name'].toString(),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),),
                                 Text((document.data()as dynamic)!['price'].toString(),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20)),

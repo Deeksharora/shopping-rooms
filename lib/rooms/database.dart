@@ -7,7 +7,7 @@ class Database{
 
 final String uid;
 Database({required this.uid});
-final CollectionReference data = FirebaseFirestore.instance.collection('course');
+final CollectionReference data = FirebaseFirestore.instance.collection('room');
  // FirebaseAuth _auth = FirebaseAuth.instance;
 
 Future updateroomdata(List<String> members,List<String>products)
