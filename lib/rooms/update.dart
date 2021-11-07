@@ -19,4 +19,13 @@ enterroom(String member)async{
      
      data.doc(uid).update(demoData);
 }
+
+addproduct(String productid)
+{
+   Map<String,dynamic> demoData = {
+       'product': FieldValue.arrayUnion([productid]),
+     };
+     
+     data.doc(uid).update(demoData);
+}
 }

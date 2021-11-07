@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class Database{
 
-
 final String uid;
 Database({required this.uid});
 final CollectionReference data = FirebaseFirestore.instance.collection('users');

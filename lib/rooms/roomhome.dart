@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shopping_rooms/rooms/update.dart';
 class Roomhome extends StatefulWidget {
-  const Roomhome({ Key? key }) : super(key: key);
-
+  //const Roomhome({ Key? key }) : super(key: key);
+final String roomid;
+Roomhome({required this.roomid});
   @override
-  _RoomhomeState createState() => _RoomhomeState();
+  _RoomhomeState createState() => _RoomhomeState(roomid: roomid);
 }
 
 class _RoomhomeState extends State<Roomhome> {
+  final String roomid;
+  _RoomhomeState({required this.roomid});
   final CollectionReference data = FirebaseFirestore.instance.collection('rooms');
     final CollectionReference products = FirebaseFirestore.instance.collection('products');
   @override
@@ -42,13 +46,21 @@ class _RoomhomeState extends State<Roomhome> {
                   
                         child: Column(
                           children: [
-                            Image.network((document.data() as dynamic)!['images'][0]),
-                            Text((document.data()as dynamic)!['Name'].toString(),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),),
-                            Text((document.data()as dynamic)!['price'].toString(),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20)),
-                          ],
+                            Stack(
+                              children: [
+                                Image.network((document.data() as dynamic)!['images'][0]),
+                                IconButton(onPressed: (){
+                                  Update(uid: roomid).addproduct(document.id);
+                                }, icon: Icon(Icons.favorite))]),
+                                
+                                Text((document.data()as dynamic)!['Name'].toString(),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20),),
+                                Text((document.data()as dynamic)!['price'].toString(),style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20)),
+                              ],
+                            ),
+                          
                         ),
-                      ),
-                    );
+                      );
+                    
                   }).toList(),
                 );
               }

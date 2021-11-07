@@ -79,7 +79,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
             backgroundColor: Color(0xff2FC4B2)
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
+            icon: Icon(Icons.favorite_border_outlined),
             label: 'Wishlist',
             backgroundColor: Color(0xff2FC4B2)
           ),

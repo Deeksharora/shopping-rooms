@@ -38,7 +38,7 @@ class _CreateroomState extends State<Createroom> {
                 Update(uid: uid).enterroom(_auth.currentUser!.uid);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Roomnavigation()),
+                  MaterialPageRoute(builder: (context) => Roomnavigation(roomid: uid,)),
                 );
               },child: Text("Go!")),
             ],

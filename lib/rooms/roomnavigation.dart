@@ -2,24 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:shopping_rooms/rooms/roomhome.dart';
 
 class Roomnavigation extends StatefulWidget {
-  const Roomnavigation({ Key? key }) : super(key: key);
-
+  //const Roomnavigation({ Key? key }) : super(key: key);
+final String roomid;
+  Roomnavigation({required this.roomid});
   @override
-  _RoomnavigationState createState() => _RoomnavigationState();
+  _RoomnavigationState createState() => _RoomnavigationState(roomid: roomid);
 }
 
 class _RoomnavigationState extends State<Roomnavigation> {
+  final String roomid;
+  _RoomnavigationState({required this.roomid});
   int index =0;
-  final screens =[
-   Roomhome(),
 
-  ];
   //final FirebaseAuth _auth = FirebaseAuth.instance;
  // late User user;
   //bool isloggedin = true;
   @override
   Widget build(BuildContext context) {
-  
+  final screens =[
+   Roomhome(roomid: roomid),
+
+  ];
       return Scaffold(
        bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
@@ -38,7 +41,7 @@ class _RoomnavigationState extends State<Roomnavigation> {
             backgroundColor: Color(0xff2FC4B2)
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
+            icon: Icon(Icons.favorite_border_outlined),
             label: 'Wishlist',
             backgroundColor: Color(0xff2FC4B2)
           ),

@@ -7,7 +7,7 @@ import 'package:shopping_rooms/rooms/roomnavigation.dart';
 
 
 class Roomcode extends StatefulWidget {
-  const Roomcode({ Key? key }) : super(key: key);
+  //const Roomcode({ Key? key }) : super(key: key);
 
   @override
   _RoomcodeState createState() => _RoomcodeState();
@@ -15,7 +15,7 @@ class Roomcode extends StatefulWidget {
 
 class _RoomcodeState extends State<Roomcode> {
 final FirebaseAuth _auth = FirebaseAuth.instance;
- 
+
  final codecontroller = TextEditingController();
   
    GlobalKey<FormState> _formkey = GlobalKey<FormState>();
@@ -46,7 +46,7 @@ late List <String> members;
                     Update(uid: codecontroller.text).enterroom(_auth.currentUser!.uid);
                               Navigator.push(
                                context,
-                               MaterialPageRoute(builder: (context) => Roomnavigation()),
+                               MaterialPageRoute(builder: (context) => Roomnavigation(roomid : codecontroller.text)),
                               );
                             },child: Text("Go!"))
                 

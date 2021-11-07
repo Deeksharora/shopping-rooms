@@ -44,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var docid;
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -61,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: TextButton(onPressed: () {
                           DocumentReference docref = FirebaseFirestore.instance.collection('rooms').doc();
                           docref.set({'members': mem,'product': mem});
-                          var docid = docref.id;
+                          docid = docref.id;
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Createroom(uid:docid)),
